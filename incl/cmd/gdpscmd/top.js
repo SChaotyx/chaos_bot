@@ -3,15 +3,27 @@ exports.run = async(client, message, args) => {
     switch(type){
         case 'stars': lrule = 'stars';
         break;
+        case 'star': lrule = 'stars';
+        break;
         case 'demons': lrule = 'demons';
+        break;
+        case 'demon': lrule = 'demons';
         break;
         case 'cp': lrule = 'creatorPoints';
         break;
+        case 'creator points': lrule = 'creatorPoints';
+        break;
         case 'user coins': lrule = 'userCoins';
+        break;
+        case 'coins': lrule = 'userCoins';
+        break;
+        case 'coin': lrule = 'userCoins';
         break;
         case 'secret coins': lrule = 'coins';
         break;
         case 'diamonds': lrule = 'diamonds';
+        break;
+        case 'diamond': lrule = 'diamonds';
         break;
         default: lrule = "";
         break;
