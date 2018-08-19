@@ -8,7 +8,6 @@ bot.on('message', message => {
   if (message.content === 'ping') {
     message.reply('pong');
   }
-bot.on('message', message => {
   if (message.content === 'pamela') {
     message.reply('chu! :D');
   }
