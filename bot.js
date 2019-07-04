@@ -29,7 +29,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			args = message.substring(13);
 			var postData={userName: args, channel: channelID};
 			require('request').post({
-				uri:"http://arafrybb.000webhostapp.com/dashboard/botcmd/userProfile.php",
+				uri:process.env.HOSTING+"dashboard/botcmd/userProfile.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
@@ -42,7 +42,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			args = message.substring(11);
 			var postData={levelID_Name: args, channel: channelID};
 			require('request').post({
-				uri:"http://arafrybb.000webhostapp.com/dashboard/botcmd/levelStats.php",
+				uri:env.HOSTING+"dashboard/botcmd/levelStats.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
