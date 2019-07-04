@@ -42,7 +42,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			args = message.substring(11);
 			var postData={levelID_Name: args, channel: channelID};
 			require('request').post({
-				uri:env.HOSTING+"dashboard/botcmd/levelStats.php",
+				uri:process.env.HOSTING+"dashboard/botcmd/levelStats.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
