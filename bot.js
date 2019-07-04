@@ -29,7 +29,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			args = message.substring(13);
 			var postData={userName: args, channel: channelID};
 			require('request').post({
-				uri:process.env.HOSTING+"dashboard/botcmd/userProfile.php",
+				uri:process.env.HOSTING+"incl/botcmd/userProfile.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
@@ -42,7 +42,43 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			args = message.substring(11);
 			var postData={levelID_Name: args, channel: channelID};
 			require('request').post({
-				uri:process.env.HOSTING+"dashboard/botcmd/levelStats.php",
+				uri:process.env.HOSTING+"incl/botcmd/levelStats.php",
+				headers:{'content-type': 'application/x-www-form-urlencoded'},
+				body:require('querystring').stringify(postData)
+			},
+			function(err,res,body){
+				console.log(body);
+				console.log(res.statusCode);
+			});
+		}
+		if (message.substring(10, 5) == 'stats') {
+			var postData={channel: channelID};
+			require('request').post({
+				uri:process.env.HOSTING+"incl/botcmd/serverStats.php",
+				headers:{'content-type': 'application/x-www-form-urlencoded'},
+				body:require('querystring').stringify(postData)
+			},
+			function(err,res,body){
+				console.log(body);
+				console.log(res.statusCode);
+			});
+		}
+		if (message.substring(10, 5) == 'daily') {
+			var postData={channel: channelID, type: 0};
+			require('request').post({
+				uri:process.env.HOSTING+"incl/botcmd/currentDaily.php",
+				headers:{'content-type': 'application/x-www-form-urlencoded'},
+				body:require('querystring').stringify(postData)
+			},
+			function(err,res,body){
+				console.log(body);
+				console.log(res.statusCode);
+			});
+		}
+		if (message.substring(11, 5) == 'weekly') {
+			var postData={channel: channelID, type: 1};
+			require('request').post({
+				uri:process.env.HOSTING+"incl/botcmd/currentDaily.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
