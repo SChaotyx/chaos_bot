@@ -17,9 +17,7 @@ bot.on('ready', function (evt) {
 	logger.info(bot.username + ' – (' + bot.id + ')');
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
-	// Nuestro bot necesita saber si ejecutará un 
-	// Escuchará los mensajes que empiecen con '¡'
-	if (message.substring(0, 5) == 'gdps!') {
+	if (message.substring(0, 5) == 'test!') {
 		var args = message.substring(1).split(' ');
 		var cmd = args[0];
 		if (message.substring(9, 5) == 'ping') {
@@ -27,9 +25,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 		}
 		if (message.substring(12, 5) == 'profile') {
 			args = message.substring(13);
-			var postData={userName: args, channel: channelID};
+			var postData={userName: args, channel: channelID, tagID: userID};
 			require('request').post({
-				uri:process.env.HOSTING+"incl/botcmd/userProfile.php",
+				uri:process.env.HOSTING+"incl/discord/cmd/userProfile.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
@@ -40,9 +38,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 		}
 		if (message.substring(10, 5) == 'level') {
 			args = message.substring(11);
-			var postData={levelID_Name: args, channel: channelID};
+			var postData={levelID_Name: args, channel: channelID, tagID: userID};
 			require('request').post({
-				uri:process.env.HOSTING+"incl/botcmd/levelStats.php",
+				uri:process.env.HOSTING+"incl/discord/cmd/levelStats.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
@@ -52,9 +50,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			});
 		}
 		if (message.substring(10, 5) == 'stats') {
-			var postData={channel: channelID};
+			var postData={channel: channelID, tagID: userID};
 			require('request').post({
-				uri:process.env.HOSTING+"incl/botcmd/serverStats.php",
+				uri:process.env.HOSTING+"incl/discord/cmd/serverStats.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
@@ -64,9 +62,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			});
 		}
 		if (message.substring(10, 5) == 'daily') {
-			var postData={channel: channelID, type: 0};
+			var postData={channel: channelID, type: 0, tagID: userID};
 			require('request').post({
-				uri:process.env.HOSTING+"incl/botcmd/currentDaily.php",
+				uri:process.env.HOSTING+"incl/discord/cmd/currentDaily.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
@@ -76,9 +74,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			});
 		}
 		if (message.substring(11, 5) == 'weekly') {
-			var postData={channel: channelID, type: 1};
+			var postData={channel: channelID, type: 1, tagID: userID};
 			require('request').post({
-				uri:process.env.HOSTING+"incl/botcmd/currentDaily.php",
+				uri:process.env.HOSTING+"incl/discord/cmd/currentDaily.php",
 				headers:{'content-type': 'application/x-www-form-urlencoded'},
 				body:require('querystring').stringify(postData)
 			},
