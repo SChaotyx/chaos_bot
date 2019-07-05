@@ -17,7 +17,7 @@ bot.on('ready', function (evt) {
 	logger.info(bot.username + ' – (' + bot.id + ')');
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
-	if (message.substring(0, 5) == 'test!') {
+	if (message.substring(0, 5) == 'gdps!') {
 		var args = message.substring(1).split(' ');
 		var cmd = args[0];
 		if (message.substring(9, 5) == 'ping') {
