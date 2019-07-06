@@ -15,6 +15,7 @@ bot.on('ready', function (evt) {
 	logger.info('Connected');
 	logger.info('Logged in as: ');
 	logger.info(bot.username + ' – (' + bot.id + ')');
+	bot.sendMessage({to: process.env.CHANNEL_LOG, message: '**'+bot.username+' Connected**'});
 });
 bot.on('message', function (user, userID, channelID, message, evt) {
 	if (message.substring(0, 5) == 'gdps!') {
@@ -34,6 +35,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			function(err,res,body){
 				console.log(body);
 				console.log(res.statusCode);
+				bot.sendMessage({to: process.env.CHANNEL_LOG, message: '```'+body+'```'});
 			});
 		}
 		if (message.substring(10, 5) == 'level') {
@@ -47,6 +49,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			function(err,res,body){
 				console.log(body);
 				console.log(res.statusCode);
+				bot.sendMessage({to: process.env.CHANNEL_LOG, message: '```'+body+'```'});
 			});
 		}
 		if (message.substring(10, 5) == 'stats') {
@@ -59,6 +62,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			function(err,res,body){
 				console.log(body);
 				console.log(res.statusCode);
+				bot.sendMessage({to: process.env.CHANNEL_LOG, message: '```'+body+'```'});
 			});
 		}
 		if (message.substring(10, 5) == 'daily') {
@@ -71,6 +75,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			function(err,res,body){
 				console.log(body);
 				console.log(res.statusCode);
+				bot.sendMessage({to: process.env.CHANNEL_LOG, message: '```'+body+'```'});
 			});
 		}
 		if (message.substring(11, 5) == 'weekly') {
@@ -83,6 +88,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			function(err,res,body){
 				console.log(body);
 				console.log(res.statusCode);
+				bot.sendMessage({to: process.env.CHANNEL_LOG, message: '```'+body+'```'});
 			});
 		}
 	}
