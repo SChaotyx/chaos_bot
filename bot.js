@@ -37,7 +37,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 					},
 					footer: {
 						icon_url: process.env.HOSTING+"resources/misc/gdpsbot.png",
-						text: "Chaos-Bot v1.2.0"
+						text: "Chaos-Bot v1.1.0"
 					},
 					fields: [
 					{
