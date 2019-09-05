@@ -4,7 +4,7 @@ const gs = require("./mainLib.js");
 
 //HEROKU CONFIG VARS
 var bottoken = process.env.BOT_TOKEN;
-var prefix = 'gdps!';
+var prefix = process.env.PREFIX;
 var gdpshost = process.env.HOSTING;
 var channel_logs = process.env.CHANNEL_LOG;
 
