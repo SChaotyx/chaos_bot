@@ -1,13 +1,13 @@
 {
-  "name": "bot-reescrito",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ChaosBot",
+  "version": "1.2.0",
+  "description": "Bot for Geometry Dash Chaos Private Server",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "botlocal.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "SChaotyx",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
