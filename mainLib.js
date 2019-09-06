@@ -36,6 +36,9 @@ exports.prebuild = function(userID, channelID, gdpshost, param){
                         "name": "`gdps!stats`",
                         "value": "Show the general statistics of the GDPS."},					
                     {
+                        "name": "`gdps!leaderboard`",
+                        "value": "Show the top 10 players based on your assigned parameter \n Example: `gdps!leaderboard stars`"},					
+                    {
                         "name": "`gdps!about`",
                         "value": "Show bot info"},					
                 ]
