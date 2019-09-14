@@ -17,15 +17,18 @@ exports.prebuild = function(userID, channelID, gdpshost, param){
                 timestamp: new Date(),
                 footer: {
                     icon_url: gdpshost+"resources/misc/gdpsbot.png",
-                    text: "Chaos-Bot v1.2.0"
+                    text: "Chaos-Bot v1.2.1"
                 },
                 fields: [
                     {
                         "name": "Bot prefix: `gdps!`",
                         "value": "Use `gdps!help <command>` to view the detailed documentation of a specific command."},
                     {
-                            "name": "`gdps!profile <UserName>`",
-                            "value": "Example: `gdps!profile Alexander73`."},
+                        "name": "`gdps!profile <UserName or UserID>`",
+                        "value": "Example: `gdps!profile Alexander73`."},
+                    {
+                        "name": "`gdps!account <UserName or AccountID>`",
+                        "value": "Detailed information of registered accounts"},	
                     {
                         "name": "`gdps!level <LevelName or LevelID>`",
                         "value": "Example: `gdps!level 19457` or `gdps!level DeadLocked`."},
@@ -36,11 +39,11 @@ exports.prebuild = function(userID, channelID, gdpshost, param){
                         "name": "`gdps!stats`",
                         "value": "Show the general statistics of the GDPS."},					
                     {
-                        "name": "`gdps!leaderboard`",
-                        "value": "Show the top 10 players based on your assigned parameter \n Example: `gdps!leaderboard stars`"},					
+                        "name": "`gdps!leaderboard <stars>`",
+                        "value": "Show the top 10 players based on your assigned parameter \n Example: `gdps!leaderboard diamonds`"},					
                     {
                         "name": "`gdps!about`",
-                        "value": "Show bot info"},					
+                        "value": "Show bot info"},									
                 ]
             }
         }
