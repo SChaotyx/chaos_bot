@@ -12,7 +12,7 @@ client.on("warn", (e) => console.warn(e));
 client.on("debug", (e) => console.info(e));
 
 client.on("ready", () => {
-  client.user.setActivity('v1.2.0 | Use gdps!help', { type: 'PLAYING' });
+  client.user.setActivity('v1.2.1 | Use gdps!help', { type: 'PLAYING' });
    console.log("CONNECTED.");
    client.channels.get(channel_logs).send('```Connected.```')
 });
@@ -128,6 +128,20 @@ client.on("message", (message) => {
     var postData={channel: channelID, type: lrule, tagID: userID};
     require('request').post({
       uri:gdpshost+"incl/discord/cmd/leaderboardCMD.php",
+      headers:{'content-type': 'application/x-www-form-urlencoded'},
+      body:require('querystring').stringify(postData)
+    },
+    function(err,res,body){
+      console.log(body);
+      console.log(res.statusCode);
+      client.channels.get(channel_logs).send('```'+body+'```');
+    });
+  }
+  if(command === 'account'){
+    var usuario = args.slice(0).join(' ');
+    var postData = {userName: usuario, channel: channelID, tagID: userID};
+    require('request').post({
+      uri:gdpshost+"incl/discord/cmd/userAccount.php",
       headers:{'content-type': 'application/x-www-form-urlencoded'},
       body:require('querystring').stringify(postData)
     },
