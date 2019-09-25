@@ -1,16 +1,21 @@
 {
-  "name": "ChaosBot",
-  "version": "1.2.0",
+  "name": "GDPS-BOT",
+  "version": "1.2.1",
   "description": "Bot for Geometry Dash Chaos Private Server",
   "main": "bot.js",
   "scripts": {
-    "test": "botlocal.js"
+    "test": "testl.js"
+	"start": "node bot.js"
   },
   "keywords": [],
   "author": "SChaotyx",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "express": "^4.17.1",
     "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "8.x"
   }
 }
