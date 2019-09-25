@@ -1,3 +1,25 @@
+//SETUP STARTUP
+const http = require('http');
+const express = require('express');
+const app = express();
+
+//
+app.use(express.static('public'));
+
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
+
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+
+app.listen(process.env.PORT);
+
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); 
+}, 280000);
+
 const Discord = require("discord.js");
 const  client = new Discord.Client();
 const gs = require("./mainLib.js");
@@ -9,7 +31,6 @@ var channel_logs = process.env.CHANNEL_LOG;
 
 client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
-client.on("debug", (e) => console.info(e));
 
 client.on("ready", () => {
   client.user.setActivity('v1.2.1 | Use gdps!help', { type: 'PLAYING' });
