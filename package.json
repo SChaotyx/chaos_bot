@@ -1,5 +1,5 @@
 {
-  "name": "GDPS-BOT",
+  "name": "chaos_bot",
   "version": "1.2.1",
   "description": "Bot for Geometry Dash Chaos Private Server",
   "main": "bot.js",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "request": "^2.88.0"
   },

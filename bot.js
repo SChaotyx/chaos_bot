@@ -22,7 +22,8 @@ setInterval(() => {
 
 const Discord = require("discord.js");
 const  client = new Discord.Client();
-const gs = require("./mainLib.js");
+const gs = require("./incl/mainLib.js");
+require('dotenv').config()
 
 var bottoken = process.env.BOT_TOKEN;
 var prefix = process.env.PREFIX;
