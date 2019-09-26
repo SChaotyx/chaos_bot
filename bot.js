@@ -22,7 +22,8 @@ setInterval(() => {
 
 const Discord = require("discord.js");
 const  client = new Discord.Client();
-const gs = require("./incl/mainLib.js");
+var mainLib = require("./incl/mainLib.js");
+var gs = new mainLib();
 require('dotenv').config()
 
 var bottoken = process.env.BOT_TOKEN;
@@ -34,7 +35,7 @@ client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
 
 client.on("ready", () => {
-  client.user.setActivity('v1.2.1 | Use gdps!help', { type: 'PLAYING' });
+  client.user.setActivity('Use gdps!help', { type: 'PLAYING' });
    console.log("CONNECTED.");
    client.channels.get(channel_logs).send('```Connected.```')
 });

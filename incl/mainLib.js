@@ -5,23 +5,11 @@ const EventEmitter = require("events");
 const URL = "http://boomlings.com/database";
 //SET NEW CLASS
 class mainLib extends EventEmitter {
-    //Search level function
-    searchLevel(levelID){
-        var postData = { str: name, type: 0, secret: "Wmfd2893gb7" };
-        require('request').post({
-            uri:"http://boomlings.com/database/getGJLevels21.php",
-            headers:{'content-type': 'application/x-www-form-urlencoded'},
-            body:require('querystring').stringify(postData)
-          },
-          function(err,res,body){
-            client.channels.get(channel_logs).send('```'+body+'```');
-          });
-    }
     premsg(userID, id){
         switch(id){
-            case 1: msg = "<@"+userID+">, here all <@596166147527933952> commands.";
+            case 1: var msg = "<@"+userID+">, here all <@596166147527933952> commands.";
             break;
-            case 2: msg = "https://discord.gg/7gJeArr";
+            case 2: var msg = "https://discord.gg/7gJeArr";
             break;
         }
         return msg
