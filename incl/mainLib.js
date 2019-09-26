@@ -1,80 +1,100 @@
-//MAIN FUNCTIONS IS HERE
-exports.premsg = function(userID, id){
-    switch(id){
-        case 1: msg = "<@"+userID+">, here all <@596166147527933952> commands.";
-        break;
-        case 2: msg = "https://discord.gg/7gJeArr";
-        break;
+//Intento de libreria para hacerlo compatible con otros GDPS y GD original
+const request = require("request");
+const EventEmitter = require("events");
+//GDPS URL
+const URL = "http://boomlings.com/database";
+//SET NEW CLASS
+class mainLib extends EventEmitter {
+    //Search level function
+    searchLevel(levelID){
+        var postData = { str: name, type: 0, secret: "Wmfd2893gb7" };
+        require('request').post({
+            uri:"http://boomlings.com/database/getGJLevels21.php",
+            headers:{'content-type': 'application/x-www-form-urlencoded'},
+            body:require('querystring').stringify(postData)
+          },
+          function(err,res,body){
+            client.channels.get(channel_logs).send('```'+body+'```');
+          });
     }
-    return msg
-}
-exports.prebuild = function(userID, channelID, gdpshost, param){
-    if(param === 'help'){
-        const embed = { 
-            embed: {
-                title: "<:info:588245545643016224> ChaosBot Commands",
-                thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
-                timestamp: new Date(),
-                footer: {
-                    icon_url: gdpshost+"resources/misc/gdpsbot.png",
-                    text: "Chaos-Bot v1.2.1"
-                },
-                fields: [
-                    {
-                        "name": "Bot prefix: `gdps!`",
-                        "value": "Use `gdps!help <command>` to view the detailed documentation of a specific command."},
-                    {
-                        "name": "`gdps!profile <UserName or UserID>`",
-                        "value": "Example: `gdps!profile Alexander73`."},
-                    {
-                        "name": "`gdps!account <UserName or AccountID>`",
-                        "value": "Detailed information of registered accounts"},	
-                    {
-                        "name": "`gdps!level <LevelName or LevelID>`",
-                        "value": "Example: `gdps!level 19457` or `gdps!level DeadLocked`."},
-                    {
-                        "name": "`gdps!daily` | `gdps!weekly`",
-                        "value": "Displays the current Daily / weekly level in the GDPS."},
-                    {
-                        "name": "`gdps!stats`",
-                        "value": "Show the general statistics of the GDPS."},					
-                    {
-                        "name": "`gdps!leaderboard <stars>`",
-                        "value": "Show the top 10 players based on your assigned parameter \n Example: `gdps!leaderboard diamonds`"},					
-                    {
-                        "name": "`gdps!about`",
-                        "value": "Show bot info"},									
-                ]
-            }
+    premsg(userID, id){
+        switch(id){
+            case 1: msg = "<@"+userID+">, here all <@596166147527933952> commands.";
+            break;
+            case 2: msg = "https://discord.gg/7gJeArr";
+            break;
         }
-        return embed;
+        return msg
     }
-    if(param === 'about'){
-        const embed = {
-            embed: {
-                title: "<:auto:588254712017584139> ChaosBot",
-                thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
-                timestamp: new Date(),
-                footer: {
-                    icon_url: gdpshost+"resources/misc/SC.png",
-                    text: "SChaotyx#5120"
-                },
-                fields: [
-                    {
-                    "name": "<:creator_points:588245543600390184> ChaosBot, Developed by SChaotyx <:dev:588246858460037121>",
-                    "value": "It is a simple bot for Geometry Dash Chaos Private Server,\n"+ 
-                    "with basic features to find levels and profiles within it.\n"+
-                    "If you have any problem contact me on my social networks",
+    prebuild(userID, channelID, gdpshost, param){
+        if(param === 'help'){
+            const embed = { 
+                embed: {
+                    title: "<:info:588245545643016224> ChaosBot Commands",
+                    thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
+                    timestamp: new Date(),
+                    footer: {
+                        icon_url: gdpshost+"resources/misc/gdpsbot.png",
+                        text: "Chaos-Bot v1.2.1"
                     },
-                    {
-                    "name": "<:friends:588245550302756870> Social:",
-                    "value": "<:discord:588248737684520971>[Discord](https://discord.gg/7gJeArr)\n"+
-                    "<:tw:588248740200972288>[Twitter](https://twitter.com/SChaotyx)\n"+
-                    "<:yt:588249043596083200>[Youtbe](https://www.youtube.com/channel/UC4eZQQYmaD-Q90LD_tF6FrA)"
+                    fields: [
+                        {
+                            "name": "Bot prefix: `gdps!`",
+                            "value": "Use `gdps!help <command>` to view the detailed documentation of a specific command."},
+                        {
+                            "name": "`gdps!profile <UserName or UserID>`",
+                            "value": "Example: `gdps!profile Alexander73`."},
+                        {
+                            "name": "`gdps!account <UserName or AccountID>`",
+                            "value": "Detailed information of registered accounts"},	
+                        {
+                            "name": "`gdps!level <LevelName or LevelID>`",
+                            "value": "Example: `gdps!level 19457` or `gdps!level DeadLocked`."},
+                        {
+                            "name": "`gdps!daily` | `gdps!weekly`",
+                            "value": "Displays the current Daily / weekly level in the GDPS."},
+                        {
+                            "name": "`gdps!stats`",
+                            "value": "Show the general statistics of the GDPS."},					
+                        {
+                            "name": "`gdps!leaderboard <stars>`",
+                            "value": "Show the top 10 players based on your assigned parameter \n Example: `gdps!leaderboard diamonds`"},					
+                        {
+                            "name": "`gdps!about`",
+                            "value": "Show bot info"},									
+                    ]
                 }
-            ]
             }
+            return embed;
         }
-        return embed;
+        if(param === 'about'){
+            const embed = {
+                embed: {
+                    title: "<:auto:588254712017584139> ChaosBot",
+                    thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
+                    timestamp: new Date(),
+                    footer: {
+                        icon_url: gdpshost+"resources/misc/SC.png",
+                        text: "SChaotyx#5120"
+                    },
+                    fields: [
+                        {
+                        "name": "<:creator_points:588245543600390184> ChaosBot, Developed by SChaotyx <:dev:588246858460037121>",
+                        "value": "It is a simple bot for Geometry Dash Chaos Private Server,\n"+ 
+                        "with basic features to find levels and profiles within it.\n"+
+                        "If you have any problem contact me on my social networks",
+                        },
+                        {
+                        "name": "<:friends:588245550302756870> Social:",
+                        "value": "<:discord:588248737684520971>[Discord](https://discord.gg/7gJeArr)\n"+
+                        "<:tw:588248740200972288>[Twitter](https://twitter.com/SChaotyx)\n"+
+                        "<:yt:588249043596083200>[Youtbe](https://www.youtube.com/channel/UC4eZQQYmaD-Q90LD_tF6FrA)"
+                    }
+                ]
+                }
+            }
+            return embed;
+        }
     }
 }
+module.exports = mainLib;
