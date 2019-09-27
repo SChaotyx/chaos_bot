@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const  client = new Discord.Client();
 const fs = require("fs");
-require(__dirname + '/app/keepAlive.js')
+require("./incl/keepAlive.js")
 require('dotenv').config()
 
 
