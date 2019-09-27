@@ -1,8 +1,5 @@
-//Intento de libreria para hacerlo compatible con otros GDPS y GD original
 const request = require("request");
 const EventEmitter = require("events");
-//GDPS URL
-const URL = "http://boomlings.com/database";
 //SET NEW CLASS
 class mainLib extends EventEmitter {
     premsg(userID, id){
