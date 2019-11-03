@@ -4,7 +4,7 @@ const EventEmitter = require("events");
 class mainLib extends EventEmitter {
     premsg(userID, id){
         switch(id){
-            case 1: var msg = "<@"+userID+">, here all <@596166147527933952> commands.";
+            case 1: var msg = "<@"+userID+">, here all commands.";
             break;
             case 2: var msg = "https://discord.gg/7gJeArr";
             break;
