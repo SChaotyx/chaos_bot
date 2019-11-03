@@ -55,7 +55,7 @@ class mainLib extends EventEmitter {
         if(param === 'about'){
             const embed = {
                 embed: {
-                    title: "<:auto:588254712017584139> GDPS Bot",
+                    title: "<:auto:588254712017584139> Chaos-Bot",
                     thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
                     timestamp: new Date(),
                     footer: {
@@ -64,7 +64,7 @@ class mainLib extends EventEmitter {
                     },
                     fields: [
                         {
-                        "name": "<:creator_points:588245543600390184> ChaosBot, Developed by SChaotyx <:dev:588246858460037121>",
+                        "name": "<:creator_points:588245543600390184> Chaos-Bot, Developed by SChaotyx <:dev:588246858460037121>",
                         "value": "It is a simple bot for Geometry Dash Private Server,\n"+ 
                         "with basic features to find levels and profiles within it.\n"+
                         "If you have any problem contact me on my social networks",
