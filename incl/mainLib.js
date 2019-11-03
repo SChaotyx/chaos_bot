@@ -4,7 +4,7 @@ const EventEmitter = require("events");
 class mainLib extends EventEmitter {
     premsg(userID, id){
         switch(id){
-            case 1: var msg = "<@"+userID+">, here all commands.";
+            case 1: var msg = "<@"+userID+">, here all ChaosBot commands.";
             break;
             case 2: var msg = "https://discord.gg/7gJeArr";
             break;
@@ -16,7 +16,7 @@ class mainLib extends EventEmitter {
             const embed = { 
                 embed: {
                     title: "<:info:588245545643016224> ChaosBot Commands",
-                    thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
+                    thumbnail:{ url: gdpshost+"resources/misc/gdps.png" },
                     timestamp: new Date(),
                     footer: {
                         icon_url: gdpshost+"resources/misc/gdpsbot.png",
