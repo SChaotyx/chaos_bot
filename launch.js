@@ -31,7 +31,7 @@ fs.readdir('./incl/events/', (err, files) => {
 });
 //READY
 client.on("ready", () => {
-  client.user.setActivity('Use gdps!help', { type: 'PLAYING' });
+  client.user.setActivity('Use '+process.env.PREFIX+'help', { type: 'PLAYING' });
    console.log("CONNECTED.");
    client.channels.get(process.env.CHANNEL_LOG).send('```Connected.```')
 });
