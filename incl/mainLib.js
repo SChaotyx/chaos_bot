@@ -65,7 +65,7 @@ class mainLib extends EventEmitter {
                     fields: [
                         {
                         "name": "<:creator_points:588245543600390184> ChaosBot, Developed by SChaotyx <:dev:588246858460037121>",
-                        "value": "It is a simple bot for Geometry Dash Chaos Private Server,\n"+ 
+                        "value": "It is a simple bot for Geometry Dash Private Server,\n"+ 
                         "with basic features to find levels and profiles within it.\n"+
                         "If you have any problem contact me on my social networks",
                         },
