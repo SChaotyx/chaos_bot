@@ -11,7 +11,7 @@ class mainLib extends EventEmitter {
         }
         return msg
     }
-    prebuild(userID, channelID, gdpshost, param){
+    prebuild(userID, channelID, gdpshost, param, prefix){
         if(param === 'help'){
             const embed = { 
                 embed: {
@@ -24,28 +24,28 @@ class mainLib extends EventEmitter {
                     },
                     fields: [
                         {
-                            "name": "Bot prefix: `gdps!`",
-                            "value": "Use `gdps!help <command>` to view the detailed documentation of a specific command."},
+                            "name": "Bot prefix: `"+prefix+"`",
+                            "value": "Use `"+prefix+"help <command>` to view the detailed documentation of a specific command."},
                         {
-                            "name": "`gdps!profile <UserName or UserID>`",
-                            "value": "Example: `gdps!profile Alexander73`."},
+                            "name": "`"+prefix+"profile <UserName or UserID>`",
+                            "value": "Example: `"+prefix+"profile Alexander73`."},
                         {
-                            "name": "`gdps!account <UserName or AccountID>`",
+                            "name": "`"+prefix+"account <UserName or AccountID>`",
                             "value": "Detailed information of registered accounts"},	
                         {
-                            "name": "`gdps!level <LevelName or LevelID>`",
-                            "value": "Example: `gdps!level 19457` or `gdps!level DeadLocked`."},
+                            "name": "`"+prefix+"level <LevelName or LevelID>`",
+                            "value": "Example: `"+prefix+"level 19457` or `"+prefix+"level DeadLocked`."},
                         {
-                            "name": "`gdps!daily` | `gdps!weekly`",
+                            "name": "`"+prefix+"daily` | `"+prefix+"weekly`",
                             "value": "Displays the current Daily / weekly level in the GDPS."},
                         {
-                            "name": "`gdps!stats`",
+                            "name": "`"+prefix+"stats`",
                             "value": "Show the general statistics of the GDPS."},					
                         {
-                            "name": "`gdps!leaderboard <stars>`",
-                            "value": "Show the top 10 players based on your assigned parameter \n Example: `gdps!leaderboard diamonds`"},					
+                            "name": "`"+prefix+"leaderboard <stars>`",
+                            "value": "Show the top 10 players based on your assigned parameter \n Example: `"+prefix+"leaderboard diamonds`"},					
                         {
-                            "name": "`gdps!about`",
+                            "name": "`"+prefix+"about`",
                             "value": "Show bot info"},									
                     ]
                 }
@@ -55,7 +55,7 @@ class mainLib extends EventEmitter {
         if(param === 'about'){
             const embed = {
                 embed: {
-                    title: "<:auto:588254712017584139> ChaosBot",
+                    title: "<:auto:588254712017584139> GDPS Bot",
                     thumbnail:{ url: gdpshost+"resources/misc/gdpsbot.png" },
                     timestamp: new Date(),
                     footer: {
