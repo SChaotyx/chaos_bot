@@ -70,6 +70,7 @@ class mainLib extends EventEmitter {
                         "If you have any problem contact me on my social networks",
                         },
                         {
+                        "name": "<:friends:588245550302756870> Social:",
                         "value": "<:discord:588248737684520971>[Discord](https://discord.gg/7gJeArr)\n"+
                         "<:tw:588248740200972288>[Twitter](https://twitter.com/SChaotyx)\n"+
                         "<:yt:588249043596083200>[Youtbe](https://www.youtube.com/channel/UC4eZQQYmaD-Q90LD_tF6FrA)"
