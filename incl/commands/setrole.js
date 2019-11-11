@@ -4,6 +4,8 @@ exports.run = async(client, message, args) => {
     let userdis = message.guild.members.get(userID);
     let roledis = message.guild.roles.get(roleID);
     if(userdis.roles.has(roledis.id)) return;
+    if(!roledis) return;
+    if(!userdis) return;
     if (message.author.bot){
         //if(!message.guild.member(bot.user).hasPermission('MANAGE_ROLES')) return;
         userdis.addRole(roledis);
