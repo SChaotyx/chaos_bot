@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
     if (message.author.bot){
         //if(!message.guild.member(bot.user).hasPermission('MANAGE_ROLES')) return;
         userdis.addRole(roledis);
-        client.channels.get(process.env.CHANNEL_LOG).send("<@"+userID+"> has role <@&"+roleID+">");
+        message.channel.send("<@"+userID+"> gets the <@&"+roleID+"> role");
     }else{
         message.channel.send("<@"+userID+"> No no no"); 
     }
