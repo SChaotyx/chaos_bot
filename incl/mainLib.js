@@ -43,7 +43,10 @@ class mainLib extends EventEmitter {
                             "value": "Show the general statistics of the GDPS."},					
                         {
                             "name": "`"+prefix+"leaderboard <stars>`",
-                            "value": "Show the top 10 players based on your assigned parameter \n Example: `"+prefix+"leaderboard diamonds`"},					
+                            "value": "Show the top 10 players based on your assigned parameter \n Example: `"+prefix+"leaderboard diamonds`"},
+                        {
+                            "name": "`"+prefix+"link <GDPS User Name>`",
+                            "value": "You can link your discord account with the gdps account to receive private notifications about your levels and receive roles when performing certain activities. \n Example: `"+prefix+"link Danola`"},							
                         {
                             "name": "`"+prefix+"about`",
                             "value": "Show bot info"},									
