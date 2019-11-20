@@ -14,5 +14,6 @@ exports.run = async(client, message, args) => {
        message.delete(1000);
     }else{
         message.channel.send("<@"+userID+"> No no no"); 
+        message.delete(1000);
     }
 }
