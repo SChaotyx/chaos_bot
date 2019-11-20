@@ -11,6 +11,7 @@ exports.run = async(client, message, args) => {
         userdis.addRole(roledis);
         client.channels.get(process.env.CHANNEL_NOTIFY).send("<@"+userID+">, ¡Obtuviste un rol especial! <@&"+roleID+">.");
        // message.channel.send("<@"+userID+"> gets the <@&"+roleID+"> role");
+       message.delete(1000);
     }else{
         message.channel.send("<@"+userID+"> No no no"); 
     }
