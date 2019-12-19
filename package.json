@@ -4,7 +4,8 @@
   "description": "Bot for Geometry Dash Chaos Private Server",
   "main": "bot.js",
   "scripts": {
-    "start": "node launch.js"
+    "start": "node launch.js",
+    "test": "node test.js"
   },
   "keywords": [],
   "author": "SChaotyx",
@@ -13,6 +14,7 @@
     "discord.js": "^11.5.1",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "merge-images": "^1.1.0",
     "request": "^2.88.0"
   },
   "engines": {
