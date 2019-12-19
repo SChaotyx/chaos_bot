@@ -7,7 +7,7 @@ exports.run = async(client, message, args) => {
     GD.levels(str).then( levelData =>{
         emb.getDiffThumb(levelData[0]).then( thumbnail =>{
             let embedData = emb.levels({lvl : levelData[0], thumb : thumbnail[0]});
-            console.log(embedData);
+            //console.log(embedData);
             message.channel.send(embedData);
         });
     });

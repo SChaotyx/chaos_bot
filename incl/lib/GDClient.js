@@ -1,9 +1,14 @@
 const EventEmitter = require("events");
 const request = require("request");
-const MainURL = "http://boomlings.com/database";
-//const MainURL = "http://schaotyx.heliohost.org";
+const RobTopServer = "http://boomlings.com/database/";
+const GDPSserver = process.env.HOSTING;
 class GDClient extends EventEmitter {
-    levels(name, obj, cb) {
+    levels(name, gdps, obj, cb) {
+		if(gdps){
+			var MainURL = GDPSserver;
+		}else{
+			var MainURL = RobTopServer;
+		}
 		let len = "-";
 		let type = "0";
 		let total = "0";
@@ -24,7 +29,7 @@ class GDClient extends EventEmitter {
         }
         let Prom = new Promise((res,rej)=> {
 			request.post({
-				url: `${MainURL}/getGJLevels21.php`,
+				url: `${MainURL}getGJLevels21.php`,
 				form: {
 					gameVersion: "21",
 					str: name,
@@ -33,7 +38,6 @@ class GDClient extends EventEmitter {
 					secret: "Wmfd2893gb7"
 				}
 			}, (e,r,b) => {
-                console.log(b);
 				let levels = b.split("#")[0].split("|");
 				let lvlArr = [];
 				for(let i in levels) {
@@ -136,7 +140,6 @@ class GDClient extends EventEmitter {
 							}
 						}
 						lvlArr.push(parsedData);
-						console.log(lvlArr[0]);
 					}
 					
 				}
