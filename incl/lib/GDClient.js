@@ -42,16 +42,9 @@ class GDClient extends EventEmitter {
 				let lvlArr = [];
 				for(let i in levels) {
 					if(levels[i] == "-1") {
-						rej();
+						res("-1")
 					} else  {
 						let lData = levels[i].split(":");
-						const lengtharr = [
-							"TINY",
-							"SHORT",
-							"MEDIUM",
-							"LONG",
-							"XL"
-						];
 						const parsedData = {
 							levelName: lData[3],
 							levelID: lData[1],
@@ -71,7 +64,7 @@ class GDClient extends EventEmitter {
 							featured: lData[29],
 							epic: lData[31],
 							description: new Buffer.from(lData[35].toString(), "base64").toString(),
-							length: lengtharr[parseInt(lData[37])],
+							length: lData[37],
 							coins: lData[43],
 							version: lData[5],
 							verifiedCoins: (lData[45] == 1 ? true : false),

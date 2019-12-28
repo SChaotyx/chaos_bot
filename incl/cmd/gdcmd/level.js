@@ -5,10 +5,12 @@ exports.run = async(client, message, args) => {
     const emb = new embeds();
     var str = args.slice(0).join(' ');
     GD.levels(str).then( levelData =>{
-        emb.getDiffThumb(levelData[0]).then( thumbnail =>{
-            let embedData = emb.levels({lvl : levelData[0], thumb : thumbnail[0]});
-            //console.log(embedData);
-            message.channel.send(embedData);
-        });
+        if(levelData === "-1"){
+            message.channel.send("<@"+message.author.id+">, el nivel no existe.");
+            return false;
+        }
+        let embedData = emb.levels({lvl : levelData[0]});
+        console.log(embedData);
+        message.channel.send(embedData);
     });
 }
