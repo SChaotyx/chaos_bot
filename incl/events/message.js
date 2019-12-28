@@ -8,7 +8,7 @@ exports.run = async(client, message) => {
             let commandfile = client.reqcmd.get(cmd.slice(process.env.REQPREFIX.length));
             if(!commandfile){
                 message.delete(1000);
-                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos uwu.`");
+                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\n las notas es opcional puedes no incluirla directamente.");
                 return;
             }    
             commandfile.run(client,message,args);
@@ -22,7 +22,7 @@ exports.run = async(client, message) => {
                 }
             }else{
                 message.delete(1000);
-                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos uwu.`");
+                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\n las notas es opcional puedes no incluirla directamente.");
             }
         }
     }else{

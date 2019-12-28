@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
     var levelID = args.slice(0)[0];
     var notes = args.slice(1).join(' ');
     if(isNaN(levelID)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos uwu.`");
+        message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\n las notas es opcional puedes no incluirla directamente.");
         message.delete(1000);
         return false;
     }
