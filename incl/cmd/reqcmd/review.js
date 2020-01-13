@@ -8,19 +8,24 @@ exports.run = async(client, message, args) => {
     var notes = args.slice(2).join(' ');
     message.delete(1000);
     if(isNaN(reqIDrev)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+"review <RequestID> <OK|NO (enviado o no)> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"review 435436364634 OK mi critica`\n las notas es opcional puedes no incluirla directamente.");
-        return false;
+        message.channel.send("Usa: `"+process.env.REQPREFIX+"review <Level ID> <ok|no (enviado o no)> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"review 43543636 ok mi critica`\n las notas es opcional puedes no incluirla directamente.");
+        return;
     }
     if(message.member.roles.has(process.env.REVROLE)) {
         message.channel.fetchMessages().then(messages => {
-            messages.forEach( function(valor, indice, array) {   
+            var found = 0;
+            var count = 0;
+            var msgc = Number(messages.size);
+            messages.forEach( function(valor, indice, array) { 
+                count++;
                 if(valor.author.id === client.user.id){
-                    if(valor.embeds[0].footer.text.split(" | ")[1].split(": ")[1]){
-                        var reqID = valor.embeds[0].footer.text.split(" | ")[1].split(": ")[1];
+                    if(valor.embeds[0].footer.text.split(" | ")[0].split(": ")[1]){
+                        //var reqID = valor.embeds[0].footer.text.split(" | ")[1].split(": ")[1];
                         var lvlID = valor.embeds[0].footer.text.split(" | ")[0].split(": ")[1];
-                        var utag = valor.embeds[0].footer.text.split(" | ")[2];
+                        var utag = valor.embeds[0].footer.text.split(" | ")[1];
                         var msgID = valor.id;
-                        if(reqID === reqIDrev){
+                        if(lvlID === reqIDrev){
+                            found++;
                             GD.levels(lvlID).then( levelData =>{
                                 if(levelData === "-1"){
                                     message.channel.send("Error: El nivel ya no existe.");
@@ -34,7 +39,7 @@ exports.run = async(client, message, args) => {
                                 requser : message.author.tag,
                                     requserID : utag, 
                                     reqavatar : message.author.avatarURL, 
-                                    requestID: reqID, 
+                                    //requestID: reqID, 
                                     status: status
                                 });
                                 client.channels.get(process.env.REVCHANNEL).send("<@"+utag+">",embedData);
@@ -44,11 +49,14 @@ exports.run = async(client, message, args) => {
                         }
                     }
                 }
+                if(count === msgc){
+                    if(found === 0){
+                        message.channel.send("Error: No se encontraron request.");
+                    }
+                }
             });
-        })
-        .catch(console.error);
+        }).catch(console.error);
     }else{
         message.channel.send("Error: No puedes usar esto.");
-        message.delete(1000);
     }
 }

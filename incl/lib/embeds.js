@@ -64,7 +64,7 @@ class embeds extends EventEmitter {
             embedData.addField(name1, reqlevelstats);
             embedData.addField(name2, name3);
             embedData.addField(":notepad_spiral: Notes:", notes);
-            embedData.setFooter("levelID: "+ lvl.levelID+" | RequestID: "+Data.requestID+" | "+Data.requserID);
+            embedData.setFooter("levelID: "+ lvl.levelID+/*" | RequestID: "+Data.requestID+*/" | "+Data.requserID);
             embedData.setAuthor(Data.requser, Data.reqavatar);
             return embedData;
         }
@@ -72,7 +72,7 @@ class embeds extends EventEmitter {
             let reqTitle = "<:starmod:588254713766739978> Level Request.";
             //let notes = Data.notes;
             let reqlevelstats = "<:down2:588245545303408671> `"+lvl.downloads+"` "+likeicon+" `"+lvl.likes+"` <:length:588245546108583946> `"+lengtharr[parseInt(lvl.length)]+"`";
-            if(Data.status === "OK"){
+            if(Data.status === "ok"){
                 var status = "<:success:588245546469294111> Sent.";
                 embedData.setColor('#2fff00');
             }else{
@@ -84,7 +84,7 @@ class embeds extends EventEmitter {
             embedData.addField(name1, reqlevelstats);
             embedData.addField(name2, name3);
             embedData.addField(":notepad_spiral: Review:", notes+"\n"+status);
-            embedData.setFooter("levelID: "+ lvl.levelID+" | RequestID: "+Data.requestID+" | "+Data.requserID);
+            embedData.setFooter("levelID: "+ lvl.levelID+/*" | RequestID: "+Data.requestID+*/" | "+Data.requserID);
             embedData.setAuthor(Data.requser, Data.reqavatar);
             return embedData;
         }

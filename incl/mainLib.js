@@ -136,7 +136,7 @@ class mainLib extends EventEmitter {
                             "name": "`"+prefix+"stats`",
                             "value": "Show the general statistics of the GDPS."},					
                         {
-                            "name": "`"+prefix+"leaderboard <stars>`",
+                            "name": "`"+prefix+"top <stars>`",
                             "value": "Show the top 10 players based on your assigned parameter \n Example: `"+prefix+"leaderboard diamonds`"},
                         {
                             "name": "`"+prefix+"link <GDPS User Name>`",
