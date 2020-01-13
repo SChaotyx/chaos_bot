@@ -7,7 +7,7 @@ exports.run = async(client, message, args) => {
     var notes = args.slice(1).join(' ');
     message.delete(1000);
     if(isNaN(levelID)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+"review <Level ID> <ok|no (enviado o no)> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"review 43543636 ok mi critica`\n las notas es opcional puedes no incluirla directamente.");
+        message.channel.send("Usa: `"+process.env.REQPREFIX+"edit <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nlas notas es opcional puedes no incluirla.");
         return;
     }
     message.channel.fetchMessages().then(messages => {

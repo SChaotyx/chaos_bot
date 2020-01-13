@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
     var reqIDrev = args.slice(0)[0];
     message.delete(1000);
     if(isNaN(reqIDrev)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+"review <Level ID> <ok|no (enviado o no)> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"review 43543636 ok mi critica`\n las notas es opcional puedes no incluirla directamente.");
+        message.channel.send("Usa: `"+process.env.REQPREFIX+"cancel <Level ID>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"cancel 43543636`\nsolo request que hayas puesto tú.");
         return;
     }
     message.channel.fetchMessages().then(messages => {
