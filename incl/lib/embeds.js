@@ -74,13 +74,12 @@ class embeds extends EventEmitter {
             let reqlevelstats = "<:down2:588245545303408671> `"+lvl.downloads+"` "+likeicon+" `"+lvl.likes+"` <:length:588245546108583946> `"+lengtharr[parseInt(lvl.length)]+"`";
             if(Data.status === "OK"){
                 var status = "<:success:588245546469294111> Sent.";
-                embedData.setColor('#fffffe');
+                embedData.setColor('#2fff00');
             }else{
                 var status = "<:cross:588245544200175621> Not sent.";
-                embedData.setColor('#fffffe');
+                embedData.setColor('#ff0000');
             }
             if(Data.notes === ""){ var notes = ""; }else{ var notes = Data.notes; }
-            
             embedData.setTitle(reqTitle);
             embedData.addField(name1, reqlevelstats);
             embedData.addField(name2, name3);
