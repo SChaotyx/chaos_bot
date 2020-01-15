@@ -46,7 +46,7 @@ class embeds extends EventEmitter {
         let value2 = levelstats;
         let name3 = ":musical_note: __"+song.name+"__ by "+song.author;
         let value3 = "SongID: "+song.id+" - Size: "+song.size+"MB\n"+
-               "<:play:588245551787802634> [Play on Newgrounds](https://www.newgrounds.com/audio/listen/"+song.id+") <:down1:588245550210613267> [Download MP3]("+song.url+")\n───────────────────\n"+
+               //"<:play:588245551787802634> [Play on Newgrounds](https://www.newgrounds.com/audio/listen/"+song.id+") <:down1:588245550210613267> [Download MP3]("+song.url+")\n───────────────────\n"+
                "**Level ID:** "+lvl.levelID+"\n"+
                "**Level Version:** "+lvl.version+"\n"+
                "**Objects count:** "+lvl.objects+"\n"+
