@@ -38,7 +38,6 @@ class GDClient extends EventEmitter {
 					secret: "Wmfd2893gb7"
 				}
 			}, (e,r,b) => {
-				console.log(b);
 				let levels = b.split("#")[0].split("|");
 				let lvlArr = [];
 				for(let i in levels) {
