@@ -128,7 +128,7 @@ class GDClient extends EventEmitter {
 							parsedData.song = {
 								name: song[0],
 								author: song[1],
-								id: lData[16],
+								id: null,
 								size: null,
 								url: null
 							}
