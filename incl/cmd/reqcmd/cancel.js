@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
     var reqIDrev = args.slice(0)[0];
     message.delete(1000);
     if(isNaN(reqIDrev)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+"cancel <Level ID>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"cancel 43543636`\nsolo request que hayas puesto tú.");
+        message.channel.send("Usa: `"+process.env.REQPREFIX+"cancel <Level ID>`\nEjemplo: `"+process.env.REQPREFIX+"cancel 43543636`\nSolo request que hayas puesto tú.");
         return;
     }
     message.channel.fetchMessages().then(messages => {
@@ -27,7 +27,7 @@ exports.run = async(client, message, args) => {
                             message.channel.fetchMessage(msgID).then(msg => msg.delete());
                             return;
                         }else{
-                            message.channel.send("Error: No puedes eliminar request que no hayas posteado tu.");
+                            message.channel.send("Error: <@"+message.author.id+">, no puedes eliminar request que no hayas posteado tu.");
                             return;
                         }
                     }
@@ -35,7 +35,7 @@ exports.run = async(client, message, args) => {
             }
             if(count === msgc){
                 if(found === 0){
-                    message.channel.send("Error: No se encontraron request.");
+                    message.channel.send("Error: <@"+message.author.id+">, no se encontraron request.");
                 }
             }
         });

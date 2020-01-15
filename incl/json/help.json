@@ -1,0 +1,105 @@
+{
+    "gdps":
+    {
+        "profile":{
+            "desc": "Busqueda de perfiles en el GDPS.",
+            "use": "**Uso:** `pref!profile <UserName o UserID>`"
+        },
+        "account":{
+            "desc": "Busqueda de cuentas registradas en el GDPS.",
+            "use": "**Uso:** `pref!account <UserName o AccountID>`"
+        },
+        "level":{
+            "desc": "Busqueda de niveles en el GDPS.",
+            "use": "**Uso:** `pref!level <Level ID o Level Name>`"
+        },
+        "daily":{
+            "desc": "Muestra el nivel Daily actual en el GDPS.",
+            "use": "**Uso:** `pref!daily`"
+        },
+        "weekly":{
+            "desc": "Muestra el nivel Weekly actual en el GDPS.",
+            "use": "**Uso:** `pref!weekly`"
+        },
+        "stats":{
+            "desc": "Muestra las estadisticas generales del GDPS",
+            "use": "**Uso:** `pref!stats`"
+        },
+        "top":{
+            "desc": "Muestra el Top 20 de jugadores basados en un parametro que elijas",
+            "use": "**Uso:** `pref!top <parametro>`\n**Parametros:** `stars, demons, cp, coins, scoins, diamonds`"
+        },
+        "link":{
+            "desc": "Para enlazar tu cuenta con la del gdps, prodras recirbir recompensas por esto.",
+            "use": "**Uso:** `pref!link <GDPS userName>`\nRecibiras instrucciones para completar el proceso."
+        },
+        "about":{
+            "desc": "Información del desarrollador.",
+            "use": "**Uso:** `pref!about`"
+        },
+        "modlist":{
+            "desc": "Lista de moderadores en el GDPS",
+            "use": "**Uso:** `pref!modlist`"
+        }
+    },
+    "request":
+    {
+        "help":{
+            "embed": {
+                "color": 16777215,
+                "thumbnail": {
+                    "url": "https://cdn.discordapp.com/icons/535604018844794880/a_fee5c2890eba63aec9fe6af7c31b17ea.gif"
+                },
+                "fields": [
+                    {
+                        "name": "───────────────────",
+                        "value": "**Prefijo:** `pref!`\n**Canal:** <#reqC>\n**Rol:** <@&reqR>\n───────────────────",
+                        "inline": false
+                    },
+                    {
+                        "name": ":pencil: **Cómo publicar tu request:**",
+                        "value": "`pref! <Level ID> <Notas>` \n**Ejemplo:** pref! 45514142 Mi hermoso nivel.",
+                        "inline": false
+                    },
+                    {
+                        "name": ":bookmark_tabs: **Puedes modificar tu request si te equivocaste:**",
+                        "value": "`pref!edit <level ID> <Notas>` \n**Ejemplo:** pref!edit 45514142 Mi hermoso nivel.",
+                        "inline": false
+                    },
+                    {
+                        "name": ":wastebasket: **Puedes eliminar tu request con esto:**",
+                        "value": "`pref!cancel <level ID>` \n**Ejemplo:** pref!cancel 45514142",
+                        "inline": false
+                    },
+                    {
+                        "name": ":pencil: **Para los __Reviewers__:**",
+                        "value": "`pref!review <level ID> <ok | no (sent | not sent)> <Notas>` \n**Ejemplo:** pref!review 45514142 ok Mi review.",
+                        "inline": false
+                    },
+                    {
+                        "name": "───────────────────",
+                        "value": "**PD:** Las `<Notas>` son opcionales.",
+                        "inline": false
+                    }
+                ],
+                "author": {
+                    "name": "Comandos:",
+                    "icon_url": "https://cdn.discordapp.com/emojis/588245545643016224.png?v=1"
+                }
+            }
+        }
+    },
+    "emd":
+    {
+        "profile": "<:profile:588247765751169051>",
+        "account": "<:friends:588245550302756870>",
+        "level": "<:play:588245551787802634>",
+        "daily": "<:daily:596415463370653698>",
+        "weekly": "<:weekly:596415467053252635>",
+        "stats": ":chart_with_upwards_trend:",
+        "top": "<:top1:588251137900150787>",
+        "link": "<:discord:588248737684520971>",
+        "about": "<:dev:588246858460037121>",
+        "modlist": "<:starmod:588254713766739978>"
+    }
+}

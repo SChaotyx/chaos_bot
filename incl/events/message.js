@@ -8,21 +8,21 @@ exports.run = async(client, message) => {
             let commandfile = client.reqcmd.get(cmd.slice(process.env.REQPREFIX.length));
             if(!commandfile){
                 message.delete(1000);
-                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nlas notas es opcional puedes no incluirla directamente.");
+                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nLas `<Notas>` son opcionales.");
                 return;
             }    
             commandfile.run(client,message,args);
         }else{
             if(message.author.bot){
                 if (message.content.startsWith("Usa:")){
-                    message.delete(9000);
+                    message.delete(6000);
                 }
                 if (message.content.startsWith("Error:")){
                     message.delete(3000);
                 }
             }else{
                 message.delete(1000);
-                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nlas notas es opcional puedes no incluirla directamente.");
+                message.channel.send("Usa: `"+process.env.REQPREFIX+" <Level ID> <Notas>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nLas `<Notas>` son opcionales.");
             }
         }
     }else{

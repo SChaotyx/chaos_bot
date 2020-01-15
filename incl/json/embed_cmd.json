@@ -1,0 +1,44 @@
+{
+    "embed": {
+        "color": 16777215,
+        "thumbnail": {
+            "url": "https://cdn.discordapp.com/icons/535604018844794880/a_fee5c2890eba63aec9fe6af7c31b17ea.gif"
+        },
+        "fields": [
+            {
+                "name": "───────────────────",
+                "value": "**Prefijo:** `req!`\n**Canal:** <#reqC>\n**Rol:** <@&reqR>\n───────────────────",
+                "inline": false
+            },
+            {
+                "name": ":pencil: **Cómo publicar tu request:**",
+                "value": "`req! <Level ID> <Notas>` \n**Ejemplo:** req! 45514142 Mi hermoso nivel.",
+                "inline": false
+            },
+            {
+                "name": ":bookmark_tabs: **Puedes modificar tu request si te equivocaste:**",
+                "value": "`req!edit <level ID> <Notas>` \n**Ejemplo:** req!edit 45514142 Mi hermoso nivel.",
+                "inline": false
+            },
+            {
+                "name": ":wastebasket: **Puedes eliminar tu request con esto:**",
+                "value": "`req!cancel <level ID>` \n**Ejemplo:** req!cancel 45514142",
+                "inline": false
+            },
+            {
+                "name": ":pencil: **Para los __Reviewers__:**",
+                "value": "`req!review <level ID> <ok | no (sent | not sent)> <Notas>` \n**Ejemplo:** req!review 45514142 ok Mi review.",
+                "inline": false
+            },
+            {
+                "name": "───────────────────",
+                "value": "**PD:** Las `<Notas>` son opcionales.",
+                "inline": false
+            }
+        ],
+        "author": {
+            "name": "Comandos:",
+            "icon_url": "https://cdn.discordapp.com/emojis/588245545643016224.png?v=1"
+        }
+    }
+}

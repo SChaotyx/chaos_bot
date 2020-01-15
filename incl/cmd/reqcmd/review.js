@@ -8,7 +8,7 @@ exports.run = async(client, message, args) => {
     var notes = args.slice(2).join(' ');
     message.delete(1000);
     if(isNaN(reqIDrev)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+"review <Level ID> <ok|no (enviado o no)> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+"review 43543636 ok mi critica`\n las notas es opcional puedes no incluirla directamente.");
+        message.channel.send("Usa: `"+process.env.REQPREFIX+"review <Level ID> <ok|no (enviado o no)> <Notas>`\nEjemplo: `"+process.env.REQPREFIX+"review 43543636 ok mi critica`\nLas `<Notas>` son opcionales.");
         return;
     }
     if(message.member.roles.has(process.env.REVROLE)) {
@@ -28,7 +28,7 @@ exports.run = async(client, message, args) => {
                             found++;
                             GD.levels(lvlID).then( levelData =>{
                                 if(levelData === "-1"){
-                                    message.channel.send("Error: El nivel ya no existe.");
+                                    message.channel.send("Error: <@"+message.author.id+">, el nivel ya no existe.");
                                     return;
                                 }
                                 var lvl = levelData[0];
@@ -51,12 +51,12 @@ exports.run = async(client, message, args) => {
                 }
                 if(count === msgc){
                     if(found === 0){
-                        message.channel.send("Error: No se encontraron request.");
+                        message.channel.send("Error: <@"+message.author.id+">, no se encontraron request.");
                     }
                 }
             });
         }).catch(console.error);
     }else{
-        message.channel.send("Error: No puedes usar esto.");
+        message.channel.send("Error: <@"+message.author.id+">, no puedes usar esto.");
     }
 }

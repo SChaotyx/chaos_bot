@@ -7,7 +7,7 @@ exports.run = async(client, message, args) => {
     var notes = args.slice(1).join(' ');
     message.delete(1000);
     if(isNaN(levelID)){
-        message.channel.send("Usa: `"+process.env.REQPREFIX+"edit <Level ID> <Notas>` sin `<>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nlas notas es opcional puedes no incluirla.");
+        message.channel.send("Usa: `"+process.env.REQPREFIX+"edit <Level ID> <Notas>`\nEjemplo: `"+process.env.REQPREFIX+" 45514142 Collab con amigos.`\nLas `<Notas>` son opcionales.");
         return;
     }
     message.channel.fetchMessages().then(messages => {
@@ -43,20 +43,20 @@ exports.run = async(client, message, args) => {
                                         }
                                         if(msgc === count){
                                             if(already > 0){
-                                                message.channel.send("Error: El nivel ya esta pendiente.");
+                                                message.channel.send("Error: <@"+message.author.id+">, el nivel ya esta pendiente.");
                                                 return;
                                             }
                                             if(levelData === "-1"){
-                                                message.channel.send("Error: El nivel no existe.");
+                                                message.channel.send("Error: <@"+message.author.id+">, el nivel no existe.");
                                                 return;
                                             }
                                             var lvl = levelData[0];
                                             if(lvl.length < 2){ 
-                                                message.channel.send("Error: el nivel es demasiado corto");
+                                                message.channel.send("Error: <@"+message.author.id+">, el nivel es demasiado corto");
                                                 return;
                                             }
                                             if(lvl.stars > 0){ 
-                                                message.channel.send("Error: el nivel ya tiene estrellas.");
+                                                message.channel.send("Error: <@"+message.author.id+">, el nivel ya tiene estrellas.");
                                                 return;
                                             }
                                             let embedData = emb.levels({
@@ -75,14 +75,14 @@ exports.run = async(client, message, args) => {
                                 });
                             });
                         }else{
-                            message.channel.send("Error: No puedes editar request que no hayas posteado tu.");
+                            message.channel.send("Error: <@"+message.author.id+">, no puedes editar request que no hayas posteado tu.");
                         }
                     }
                 }
             }
             if(count === msgc){
                 if(found === 0){
-                    message.channel.send("Error: No se encontraron request.");
+                    message.channel.send("Error: <@"+message.author.id+">, no se encontraron request.");
                 }
             }
         });

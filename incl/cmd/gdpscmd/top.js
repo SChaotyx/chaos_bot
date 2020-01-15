@@ -17,7 +17,7 @@ exports.run = async(client, message, args) => {
         break;
         case 'coins': lrule = 'userCoins';
         break;
-        case 'coin': lrule = 'userCoins';
+        case 'scoins': lrule = 'coins';
         break;
         case 'secret coins': lrule = 'coins';
         break;

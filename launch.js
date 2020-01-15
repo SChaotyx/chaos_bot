@@ -8,6 +8,8 @@ client.reqcmd = new Discord.Collection();
 client.gdcmd = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.events = new Discord.Collection();
+var helpjson = require("./incl/json/help.json");
+client.Hcmd = helpjson;
 //GDPS COMMANDS
 fs.readdir("./incl/cmd/gdpscmd/", (err, files) => {
   console.log("-----------Loading GDPS commands.-----------")
