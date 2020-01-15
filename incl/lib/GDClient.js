@@ -38,6 +38,7 @@ class GDClient extends EventEmitter {
 					secret: "Wmfd2893gb7"
 				}
 			}, (e,r,b) => {
+				console.log(b);
 				let levels = b.split("#")[0].split("|");
 				let lvlArr = [];
 				for(let i in levels) {
@@ -123,11 +124,11 @@ class GDClient extends EventEmitter {
 							  "19": ["Deadlocked", "F-777"],
 							  "20": ["Fingerbang", "MDK"] // why not kek
 							} // Thanks meganukebmp/Nexrem (https://github.com/meganukebmp/Discord-GD-Stat/blob/master/resources/level/tracks.json) (modified)
-							let song = mainSongs[lData[53]+""];
+							let song = mainSongs[lData[15]+""];
 							parsedData.song = {
 								name: song[0],
 								author: song[1],
-								id: lData[53],
+								id: lData[16],
 								size: null,
 								url: null
 							}
