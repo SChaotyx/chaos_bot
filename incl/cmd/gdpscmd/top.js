@@ -31,7 +31,7 @@ exports.run = async(client, message, args) => {
         break;
       }
       if(lrule === ""){
-        message.channel.send('<@'+message.member.id+'>\n`'+type+'` is not a valid parameter, please use `'+process.env.PREFIX+'help leaderboard` to find detailed command info.');
+        message.channel.send('<@'+message.member.id+'>\n`'+type+'` is not a valid parameter, please use `'+process.env.PREFIX+'help top` to find detailed command info.');
         return false;
       }
       var postData={type: lrule, channel: message.channel.id, tagID: message.member.id};
