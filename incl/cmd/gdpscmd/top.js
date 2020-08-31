@@ -1,6 +1,8 @@
 exports.run = async(client, message, args) => {
     var type = args.slice(0).join(' ');
     switch(type){
+        case '': lrule = 'stars';
+        break;
         case 'stars': lrule = 'stars';
         break;
         case 'star': lrule = 'stars';
