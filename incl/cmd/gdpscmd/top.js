@@ -34,7 +34,7 @@ exports.run = async(client, message, args) => {
         message.channel.send('<@'+message.member.id+'>\n`'+type+'` is not a valid parameter, please use `'+process.env.PREFIX+'help top` to find detailed command info.');
         return false;
       }
-      var postData={type: lrule, channel: message.channel.id, tagID: message.member.id};
+      var postData={type: lrule, channel: message.channel.id, tagID: message.author.id};
       require('request').post({
         uri: process.env.HOSTING + "incl/discord/cmd/leaderboardCMD.php",
         headers:{'content-type': 'application/x-www-form-urlencoded'},

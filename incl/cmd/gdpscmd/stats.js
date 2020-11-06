@@ -1,5 +1,5 @@
 exports.run = async(client, message, args) => {
-    var postData={channel: message.channel.id, tagID: message.member.id};
+    var postData={channel: message.channel.id, tagID: message.author.id};
     require('request').post({
         uri: process.env.HOSTING + "incl/discord/cmd/serverStats.php",
         headers:{'content-type': 'application/x-www-form-urlencoded'},

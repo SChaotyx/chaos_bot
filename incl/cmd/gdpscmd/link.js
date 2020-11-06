@@ -1,6 +1,6 @@
 exports.run = async(client, message, args) => {
     var userdata = args.slice(0).join(' ');
-    var postData={userData: userdata, channel: message.channel.id, tagID: message.member.id, userTag: message.member.user.tag};
+    var postData={userData: userdata, channel: message.channel.id, tagID: message.author.id, userTag: message.member.user.tag};
     require('request').post({
         uri: process.env.HOSTING + "incl/discord/cmd/linkAccount.php",
         headers:{'content-type': 'application/x-www-form-urlencoded'},

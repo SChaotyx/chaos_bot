@@ -1,6 +1,7 @@
 exports.run = async(client, message, args) => {
     var usuario = args.slice(0).join(' ');
-    var postData = {userName: usuario, channel: message.channel.id, tagID: message.member.id};
+    var postData = {userName: usuario, channel: message.channel.id, tagID: message.author.id};
+    //console.log(message.author.id);
     require('request').post({
         uri: process.env.HOSTING + "incl/discord/cmd/userProfile.php",
         headers:{'content-type': 'application/x-www-form-urlencoded'},
