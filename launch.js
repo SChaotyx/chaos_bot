@@ -34,7 +34,7 @@ fs.readdir("./incl/cmd/reqcmd/", (err, files) => {
       client.reqcmd.set(commandName, props);
   });
 });
-//GD COMMANDS
+/*GD COMMANDS
 fs.readdir("./incl/cmd/gdcmd/", (err, files) => {
   console.log("-----------Loading GD commands.-----------")
   if (err) return console.log(err);
@@ -46,6 +46,7 @@ fs.readdir("./incl/cmd/gdcmd/", (err, files) => {
       client.gdcmd.set(commandName, props);
   });
 });
+*/
 //Events "handler"
 fs.readdir('./incl/events/', (err, files) => {
   console.log("-----------Loading Events.-----------")
