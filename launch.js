@@ -4,8 +4,8 @@ const fs = require("fs");
 require('dotenv').config()
 //Command Handler
 client.gdpscmd = new Discord.Collection();
-client.reqcmd = new Discord.Collection();
-client.gdcmd = new Discord.Collection();
+//client.reqcmd = new Discord.Collection();
+//client.gdcmd = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.events = new Discord.Collection();
 var helpjson = require("./incl/json/help.json");
@@ -22,7 +22,7 @@ fs.readdir("./incl/cmd/gdpscmd/", (err, files) => {
       client.gdpscmd.set(commandName, props);
   });
 });
-//REQUEST COMMANDS
+/*REQUEST COMMANDS
 fs.readdir("./incl/cmd/reqcmd/", (err, files) => {
   console.log("-----------Loading request commands.-----------")
   if (err) return console.log(err);
@@ -34,7 +34,7 @@ fs.readdir("./incl/cmd/reqcmd/", (err, files) => {
       client.reqcmd.set(commandName, props);
   });
 });
-/*GD COMMANDS
+//GD COMMANDS
 fs.readdir("./incl/cmd/gdcmd/", (err, files) => {
   console.log("-----------Loading GD commands.-----------")
   if (err) return console.log(err);
