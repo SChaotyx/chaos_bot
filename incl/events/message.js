@@ -3,6 +3,7 @@ exports.run = async(client, message) => {
     var messageArray = message.content.split(" ");
     var cmd = messageArray[0];
     var args = messageArray.slice(1);
+    /*
     if(message.channel.id == process.env.REQCHANNEL){
         if (message.content.startsWith(process.env.REQPREFIX)){
             let commandfile = client.reqcmd.get(cmd.slice(process.env.REQPREFIX.length));
@@ -31,12 +32,13 @@ exports.run = async(client, message) => {
             if(!commandfile) return;    
             commandfile.run(client,message,args);
         }
+    */
         if (message.content.startsWith(process.env.PREFIX)){
             let commandfile = client.gdpscmd.get(cmd.slice(process.env.PREFIX.length));
             if(!commandfile) return;    
             commandfile.run(client,message,args);
         }
-    }                         
+    //}                         
 }
 /*
 */
