@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
     if (message.author.bot){
         if(!message.guild.member(client.user).hasPermission('MANAGE_ROLES')) return message.reply('Manage Roles permission is denied.');
         //userdis.addRole(roledis);
-        message.guild.member(userID).roles.add(roleID)
+        message.guild.member(userID).roles.add(roleID);
         client.channels.get(process.env.CHANNEL_NOTIFY).send("<@"+userID+">, ¡Obtuviste un rol especial! <@&"+roleID+">.");
     }else{
         message.channel.send("<@"+userID+"> No no no");
