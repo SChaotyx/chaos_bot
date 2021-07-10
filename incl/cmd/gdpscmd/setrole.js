@@ -1,7 +1,7 @@
 exports.run = async(client, message, args) => {
     var userID = args.slice(0, 1).join(' ');
     var roleID = args.slice(1).join(' ');
-    let userdis = message.guild.members.cache(userID);
+    let userdis = message.guild.members.get(userID);
     let roledis = message.guild.roles.get(roleID);
     if(!roledis) return client.channels.get(process.env.CHANNEL_LOG).send("```El rol "+roleID+" no existe.```");
     if(!userdis) return client.channels.get(process.env.CHANNEL_LOG).send("```El usuario "+userID+" no existe.```");
