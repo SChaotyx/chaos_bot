@@ -4,7 +4,7 @@ exports.run = async(client, message, args) => {
     let userdis = message.guild.members.get(userID);
     let roledis = message.guild.roles.get(roleID);
     if(!roledis) return client.channels.get(process.env.CHANNEL_LOG).send("```El rol "+roleID+" no existe.```");
-    if(!userdis) return client.channels.get(process.env.CHANNEL_LOG).send("```El usuario "+userID+" no existe.```");
+    //if(!userdis) return client.channels.get(process.env.CHANNEL_LOG).send("```El usuario "+userID+" no existe.```");
     if(userdis.roles.has(roledis.id)) return message.delete(1000);
     if (message.author.bot){
         if(!message.guild.member(client.user).hasPermission('MANAGE_ROLES')) return message.reply('Manage Roles permission is denied.');
