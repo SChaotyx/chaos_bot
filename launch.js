@@ -62,6 +62,6 @@ fs.readdir('./incl/events/', (err, files) => {
 client.on("ready", () => {
   client.user.setActivity('Use '+process.env.PREFIX+'help', { type: 'PLAYING' });
    console.log("CONNECTED.");
-   client.channels.get(process.env.CHANNEL_LOG).send('```Connected.```')
+   client.channels.cache.get(process.env.CHANNEL_LOG).send('```Connected.```')
 });
 client.login(process.env.BOT_TOKEN);

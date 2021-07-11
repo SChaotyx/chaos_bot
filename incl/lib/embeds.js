@@ -2,7 +2,7 @@ const EventEmitter = require("events");
 const Discord = require('discord.js');
 class embeds extends EventEmitter {
     levels(Data){
-        const embedData = new Discord.RichEmbed()
+        const embedData = new Discord.MessageEmbed()
         var lvl = Data.lvl;
         var creator = lvl.creator;
         var song = lvl.song;

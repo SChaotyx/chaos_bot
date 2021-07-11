@@ -1,7 +1,7 @@
 exports.run = async(client, message, args) => {
     const Discord = require("discord.js");
     const fs = require("fs");
-    const embedData = new Discord.RichEmbed();
+    const embedData = new Discord.MessageEmbed();
     var cmdinfo = client.Hcmd.gdps
     var emd = client.Hcmd.emd
     var reqhelp = client.Hcmd.request
@@ -12,7 +12,7 @@ exports.run = async(client, message, args) => {
         if (err) return console.log(err);
         if(!cmdarg){
             embedData.addField("───────────────────", "**Prefijo:** `"+process.env.PREFIX+"`\n**Usa:** `"+process.env.PREFIX+"help <Comando>` para ver información detallada.\n───────────────────");
-            embedData.addField("<:approved:588253185018298378> **Level Request:**", "**Usa:** `"+process.env.PREFIX+"help request` para ver toda la informarción.")
+            //embedData.addField("<:approved:588253185018298378> **Level Request:**", "**Usa:** `"+process.env.PREFIX+"help request` para ver toda la informarción.")
             files.forEach(file => {
                 count++;
                 if (file.endsWith(".js")){
@@ -33,7 +33,7 @@ exports.run = async(client, message, args) => {
                     message.channel.send("<@"+message.author.id+">, vista general de todos los comandos disponibles.", embedData);
                 }
             });
-        }else if(cmdarg === "request"){
+        }else /*if(cmdarg === "request"){
             reqhelp.help.embed.fields[0].value = reqhelp.help.embed.fields[0].value.split("pref!").join(process.env.REQPREFIX);
             reqhelp.help.embed.fields[1].value = reqhelp.help.embed.fields[1].value.split("pref!").join(process.env.REQPREFIX);
             reqhelp.help.embed.fields[2].value = reqhelp.help.embed.fields[2].value.split("pref!").join(process.env.REQPREFIX);
@@ -42,7 +42,7 @@ exports.run = async(client, message, args) => {
             reqhelp.help.embed.fields[0].value = reqhelp.help.embed.fields[0].value.split("<#reqC>").join("<#"+process.env.REQCHANNEL+">");
             reqhelp.help.embed.fields[0].value = reqhelp.help.embed.fields[0].value.split("<@&reqR>").join("<@&"+process.env.REVROLE+">");
             message.channel.send("<@"+message.author.id+">, comandos para <#"+process.env.REQCHANNEL+">.", reqhelp.help);
-        }else{
+        }else*/{
             files.forEach(file => {
                 count++;
                 if (file.endsWith(".js")){

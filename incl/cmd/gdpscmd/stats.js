@@ -8,6 +8,6 @@ exports.run = async(client, message, args) => {
     function(err,res,body){
     console.log(body);
     console.log(res.statusCode);
-    client.channels.get(process.env.CHANNEL_LOG).send('```'+body+'```');
+    client.channels.cache.get(process.env.CHANNEL_LOG).send('```'+body+'```');
     });
 }

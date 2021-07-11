@@ -42,7 +42,7 @@ exports.run = async(client, message, args) => {
                                     //requestID: reqID, 
                                     status: status
                                 });
-                                client.channels.get(process.env.REVCHANNEL).send("<@"+utag+">",embedData);
+                                client.channels.cache.get(process.env.REVCHANNEL).send("<@"+utag+">",embedData);
                                 message.channel.fetchMessage(msgID).then(msg => msg.delete());
                                 return;
                             });
